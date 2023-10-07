@@ -11,10 +11,10 @@ html {
 .page {
   inline-size: 1200px;
   block-size: 100%;
-  padding: 133px 30px;
-  margin: auto;
   display: flex;
+  margin: auto;
   align-items: center;
+  justify-content: center;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -51,12 +51,12 @@ ol {
 }
 
 .content {
-inline-size: 1140px;
-display: grid;
-grid-template-columns: 711px 1fr;
-grid-template-rows: 534px;
-grid-column-gap: 30px;
-align-content: end;
+  inline-size: 1140px;
+  display: grid;
+  grid-template-columns: 711px 1fr;
+  grid-template-rows: 534px;
+  grid-column-gap: 30px;
+  align-content: end;
 }
 
 .result {
@@ -93,8 +93,8 @@ align-content: end;
 }
 
 .search-form__fieldset-title {
-  color: #FFF;
-  font-family: Fira Sans Condensed, sans-serif;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -105,11 +105,11 @@ align-content: end;
   inline-size: 225px;
   appearance: none;
   border: none;
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.70);
-  font-family: Fira Sans Condensed, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -121,13 +121,13 @@ align-content: end;
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
 .search-form__textfield:active {
-  border-right: 1px solid #FFF;
-  border-left: 1px solid #FFF;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
 }
 
 .search-form__checkbox-list {
@@ -137,8 +137,8 @@ align-content: end;
 }
 
 .search-form__label-text {
-  color: #FFF;
-  font-family: Fira Sans Condensed, sans-serif;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -155,31 +155,29 @@ align-content: end;
   block-size: 19px;
   inline-size: 19px;
   background-color: transparent;
-  vertical-align:text-top;
-  border: 1px solid #FFF;
+  vertical-align: text-top;
+  border: 1px solid #fff;
   cursor: pointer;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before,
-.search-form__checkbox:active + .search-form__pseudo-checkbox::before{
+.search-form__checkbox:active + .search-form__pseudo-checkbox::before {
   content: "";
   display: block;
-  margin-top: 1px;
-  margin-left: 1px;
+  margin: 1px auto;
   block-size: 15px;
   inline-size: 15px;
-  background-color: #FFF;
-
+  background-color: #fff;
 }
 
 .search-form__submit-button {
   inline-size: 194px;
   align-self: flex-end;
-  padding: 6px 73.5px;
+  padding: 5px 72.5px;
   background-color: transparent;
-  border: 1px solid #FFF;
-  color: #FFF;
-  font-family: Fira Sans Condensed, sans-serif;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -195,9 +193,9 @@ align-content: end;
 }
 
 .title {
-  max-height: 210px;
-  max-width: 260px;
-  color: #FFF;
+  height: 210px;
+  width: 260px;
+  color: #fff;
   font-family: Oswald, sans-serif;
   font-size: 75px;
   line-height: 94%;
@@ -211,11 +209,12 @@ align-content: end;
 .content__list {
   block-size: 100%;
   inline-size: 100%;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  overflow-y: scroll; /*Если ставлю auto, то в firefox появляется горизонатльный скролл из-за зеленогорска*/
   position: relative;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .content__list::-webkit-scrollbar {
@@ -243,6 +242,7 @@ align-content: end;
 .content__video-card-description-container {
   block-size: 100%;
   inline-size: 100%;
+  padding: 2px 0 0 2px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -256,8 +256,7 @@ align-content: end;
 }
 
 .content__video-card-description {
-  margin-left: 2px;
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -282,17 +281,17 @@ align-content: end;
 }
 
 .content__card-link:focus-visible {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
-.content__video-card:hover .content__video-card-title{
+.content__video-card:hover .content__video-card-title {
   text-decoration: underline;
   /* text-underline-position: under; */ /*почему-то при дбавлении этого свойства в firefox андерлайн на текст заезжает(поэтому отключил)*/
   text-decoration-thickness: 2px;
 }
 
-.content__video-card:hover .content__video-card-description{
+.content__video-card:hover .content__video-card-description {
   text-decoration: underline;
   /* text-underline-position: under; */
 }
@@ -306,7 +305,7 @@ align-content: end;
 }
 
 .button:focus-visible {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
@@ -323,13 +322,12 @@ align-content: end;
   block-size: 34px;
   padding: 6px 0;
   margin: 0 2px 2px 2px;
-  border: 1px solid #FFF;
+  border: 1px solid currentColor;
   background-color: transparent;
-  color: #FFF;
-  font-family: Fira Sans Condensed;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-
