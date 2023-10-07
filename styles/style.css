@@ -146,7 +146,7 @@ ol {
   cursor: pointer;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text{
   text-decoration: underline;
 }
 
@@ -193,7 +193,6 @@ ol {
 }
 
 .title {
-  height: 210px;
   width: 260px;
   color: #fff;
   font-family: Oswald, sans-serif;
@@ -209,7 +208,7 @@ ol {
 .content__list {
   block-size: 100%;
   inline-size: 100%;
-  overflow-y: scroll; /*Если ставлю auto, то в firefox появляется горизонатльный скролл из-за зеленогорска*/
+  overflow-y: auto;
   position: relative;
 }
 
@@ -228,21 +227,22 @@ ol {
 }
 
 .content__card-link {
+  inline-size: 399px;
   display: block;
-  margin: 2px;
   color: #fff;
   text-decoration: none;
 }
 
 .content__video-card {
+  inline-size: 100%;
+  block-size: 100%;
   display: flex;
   align-items: flex-start;
 }
 
 .content__video-card-description-container {
-  block-size: 100%;
+  margin: 4px 0 2px 2px;
   inline-size: 100%;
-  padding: 2px 0 0 2px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -266,6 +266,7 @@ ol {
 .content__video-card-thumbnail {
   height: 103px;
   min-width: 194px;
+  margin: 2px 2px 2px 0;
 }
 
 .content__card-link_current {
